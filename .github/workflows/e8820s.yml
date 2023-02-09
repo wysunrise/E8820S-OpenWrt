@@ -12,6 +12,7 @@
 name: OpenWrt-E8820S 闭源超精简固件5.10
 
 on: 
+  workflow_dispatch:
   release:
     types: [published]
 
@@ -39,7 +40,7 @@ on:
 
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/wysunrise/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/e8820s.config

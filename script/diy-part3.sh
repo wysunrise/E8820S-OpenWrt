@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # 修改openwrt登陆地址,把下面的192.168.123.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把E8820S修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/E8820S/g' package/base-files/files/bin/config_generate
@@ -44,24 +44,24 @@ mkdir package/community
 pushd package/community
 
 # Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
+# git clone --depth=1 https://github.com/Lienol/openwrt-package
 
 # Add luci-app-advanced
 #git clone --depth=1 https://github.com/sirpdboy/luci-app-advanced
 
 # Add dnsfilter
-git clone --depth=1 https://github.com/garypang13/luci-app-dnsfilter
+# git clone --depth=1 https://github.com/garypang13/luci-app-dnsfilter
 
 # Add OpenAppFilter
 #git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
 # Add jd 
 #git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus
-git clone https://github.com/jerrykuku/node-request.git package/lean/node-request  #京东签到依赖
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/lean/luci-app-jd-dailybonus  #luci-app-jd-dailybonus[京东签到]
+# git clone https://github.com/jerrykuku/node-request.git package/lean/node-request  #京东签到依赖
+# git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/lean/luci-app-jd-dailybonus  #luci-app-jd-dailybonus[京东签到]
 
 # Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 # Add luci-app-vssr <M>
 #git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
@@ -72,8 +72,8 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 #git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 
 # Add iptvhelper & luci-app-iptvhelper
-svn co https://github.com/kiddin9/openwrt-packages/trunk/iptvhelper
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-iptvhelper
+# svn co https://github.com/kiddin9/openwrt-packages/trunk/iptvhelper
+# svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-iptvhelper
 
 # Add ServerChan
 #git clone --depth=1 https://github.com/tty228/luci-app-serverchan
@@ -82,15 +82,15 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-iptvhelper
 #git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 
 # Add luci-app-onliner (need luci-app-nlbwmon)
-git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
+# git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add luci-app-adguardhome
 #git clone --depth=1 https://github.com/SuLingGG/luci-app-adguardhome
 
 # Add luci-app-diskman
-git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
-mkdir parted
-cp luci-app-diskman/Parted.Makefile parted/Makefile
+# git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
+# mkdir parted
+# cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 # Add luci-app-dockerman
 #rm -rf ../lean/luci-app-docker
@@ -101,7 +101,7 @@ cp luci-app-diskman/Parted.Makefile parted/Makefile
 #git clone --depth=1 https://github.com/project-openwrt/openwrt-gowebdav
 
 # Add luci-app-nat6-helper
-git clone --depth=1 https://github.com/Ausaci/luci-app-nat6-helper
+# git clone --depth=1 https://github.com/Ausaci/luci-app-nat6-helper
 
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
@@ -113,16 +113,16 @@ git clone --depth=1 -b openwrt-18.06 https://github.com/shiyu1314/luci-theme-ros
 rm -rf ../lean/luci-theme-rosy
 
 # Add tmate
-git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
+# git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
 
 # Add subconverter
-git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
+# git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add luci-udptools
 #git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 
 # Add OpenAppFilter
-git clone --depth=1 https://github.com/destan19/OpenAppFilter
+# git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
 # Add luci-app-oled (R2S Only)
 #git clone --depth=1 https://github.com/NateLol/luci-app-oled
@@ -133,12 +133,12 @@ git clone --depth=1 https://github.com/destan19/OpenAppFilter
 #popd
 
 # Add netdata
-rm -rf ../lean/netdata
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata
+# rm -rf ../lean/netdata
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata
 
 # luci-app-netdata
-rm -rf ../lean/luci-app-netdata
-git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
+# rm -rf ../lean/luci-app-netdata
+# git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Mod zzz-default-settings
 #pushd package/lean/default-settings/files
@@ -177,5 +177,5 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 #popd
 
 #添加smartdns
-git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+# git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
